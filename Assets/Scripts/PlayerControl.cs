@@ -30,7 +30,8 @@ public class PlayerControl : MonoBehaviour {
 		onGround = (flags & CollisionFlags.CollidedBelow)!=0;
 
 		if(Input.GetButton("Fire1")){
-			playerCharacter.weapon.FireWeapon(transform);
+			gameObject.SendMessage("FireWeapon");
+			//playerCharacter.weapon.FireWeapon(transform);
 		}
 	}
 }

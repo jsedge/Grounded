@@ -8,13 +8,14 @@ public class PlayerCharacter : MonoBehaviour {
 	public Image healthBar;
 	public Weapon weapon;
 
-	// Use this for initialization
-	void Start () {
-		weapon = new Weapon(5,10,0.5f);
-	}
+
 	
 	// Update is called once per frame
 	void Update () {
 		healthBar.fillAmount = health/250f;
+	}
+
+	void FireWeapon(){
+		weapon.SendMessage("FireWeapon");
 	}
 }
