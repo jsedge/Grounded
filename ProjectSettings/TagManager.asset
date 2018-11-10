@@ -6,10 +6,6 @@ TagManager:
   tags:
   - Enemy
   - Squad
-<<<<<<< HEAD
-  - Weapon
-=======
->>>>>>> 2ad8ccbaf53cfb3bf959773c34cfc207b1d75534
   layers:
   - Default
   - TransparentFX
@@ -19,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - 
   - 
   - 
   - 
