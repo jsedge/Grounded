@@ -31,7 +31,6 @@ public class PlayerControl : MonoBehaviour {
 
 		if(Input.GetButton("Fire1")){
 			gameObject.SendMessage("FireWeapon");
-			//playerCharacter.weapon.FireWeapon(transform);
 		}
 	}
 }
