@@ -35,7 +35,6 @@ public class TargetAcquisition : MonoBehaviour {
 		float bestScore = 1;
 		foreach(GameObject possibleTarget in possibleTargets){
 			if(possibleTarget == null){
-				// remove thing dunno lmao
 				continue;
 			}
 			float score = 0;

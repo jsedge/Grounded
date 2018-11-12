@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour {
-	public GameObject target;
+public class MeleeAI : GenericAI {
+	/*
+	Extension of generic AI, this will mindlessly run at the target then stop when it hits
+	*/
+	
 	public float speed;
 	private float gravity;
 	private CharacterController characterController;
 	private Animation animator;
-	private bool inTarget = false;
 
 	void Start(){
 		characterController = GetComponent(typeof(CharacterController)) as CharacterController;
@@ -33,27 +35,4 @@ public class EnemyAI : MonoBehaviour {
 		
 	}
 
-	void UpdateTarget(GameObject newTarget){
-		if(target == newTarget){
-			return;
-		}
-		target = newTarget;
-		inTarget = false;
-	}
-
-	void RemoveTarget(){
-		target = null;
-		inTarget = false;
-	}
-
-	void OnTriggerEnter(Collider other){
-		if(other.gameObject == target){
-			inTarget = true;
-		}
-	}
-
-	void OnTriggerExit(Collider other){
-		if(other.gameObject == target)
-			inTarget = false;
-	}
 }
