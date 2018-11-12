@@ -306,8 +306,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183565865198416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 118.21584, y: 0.4963012, z: 34.187943}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 38.7, y: -67.33933, z: 81.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4686177459392620}
@@ -697,6 +697,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ea244069d9c41d283b5ca59fd79956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tags:
+  - Player
+  - Squad
+  weights: 0500000003000000
   reassessmentDelay: 2
 --- !u!114 &114419224872153704
 MonoBehaviour:

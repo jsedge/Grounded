@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour {
 	void Update () {
 		if(target != null){
 			transform.LookAt(target);
-			characterController.Move(transform.forward * Time.deltaTime);
+			characterController.Move(transform.forward * Time.deltaTime * speed);
 			if(!animator.isPlaying){
 				animator.Play("Walk");
 			}

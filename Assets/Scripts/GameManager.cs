@@ -18,7 +18,10 @@ public class GameManager : MonoBehaviour {
 			return;
 		}
 	}
-	// Use this for initialization
+	
+	/*
+	Switches between the HUD and the LevelSelect being visible
+	 */
 	public void ToggleLevelSelect(){
 		levelSelect.SetActive(!levelSelect.activeSelf);
 		hud.SetActive(!hud.activeSelf);
@@ -27,7 +30,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void OpenLevel(string levelName){
-		Debug.Log("This would open the level " + levelName);
 		SceneManager.LoadScene(levelName);
 	}
 }

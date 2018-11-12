@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetAcquisition : MonoBehaviour {
-	
+	public List<string> tags;
+	public List<int> weights;
+	private Dictionary<string,int> targetWeights;
 	private List<GameObject> possibleTargets;
 	public float reassessmentDelay = 2.0f;
 	private float reassessmentCooldown;
@@ -12,6 +14,10 @@ public class TargetAcquisition : MonoBehaviour {
 	void Start(){
 		possibleTargets = new List<GameObject>();
 		parent = gameObject.transform.parent.gameObject;
+		targetWeights = new Dictionary<string, int>();
+		for(int i = 0; i < tags.Count; i++){
+			targetWeights[tags[i]] = weights[i];
+		}
 	}
 		
 	// Update is called once per frame
@@ -25,6 +31,7 @@ public class TargetAcquisition : MonoBehaviour {
 
 	void AssessTargets(){
 		GameObject bestTarget = null;
+		// Start with a best score of 1, so if no "good" target is found, we assign none
 		float bestScore = 1;
 		foreach(GameObject possibleTarget in possibleTargets){
 			if(possibleTarget == null){
@@ -32,11 +39,11 @@ public class TargetAcquisition : MonoBehaviour {
 				continue;
 			}
 			float score = 0;
-			if(possibleTarget.CompareTag("Player")){
-				score = 5;
-			}else if(possibleTarget.CompareTag("Squad")){
-				score = 3;
+			if(targetWeights.ContainsKey(possibleTarget.tag)){
+				score = targetWeights[possibleTarget.tag];
 			}
+
+			Debug.Log("Possible target with tag: " + possibleTarget.tag + " has a score of " + score);
 
 			if(score > bestScore){
 				bestScore = score;
