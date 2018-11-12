@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour {
 
 	public float speed = 1.0f;
 	// Gravity might want to come from the planet/area for all actors
-	public float gravity = 1.0f;
+	private float gravity;
 	private bool onGround = true;
 	private CharacterController controller;
 	private PlayerCharacter playerCharacter;
@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour {
 	void Start () {
 		controller = GetComponent(typeof(CharacterController)) as CharacterController;
 		playerCharacter = GetComponent(typeof(PlayerCharacter)) as PlayerCharacter;
+		gravity = LevelManager.instance.gravity;
 	}
 	
 	// Update is called once per frame

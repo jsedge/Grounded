@@ -43,8 +43,6 @@ public class TargetAcquisition : MonoBehaviour {
 				score = targetWeights[possibleTarget.tag];
 			}
 
-			Debug.Log("Possible target with tag: " + possibleTarget.tag + " has a score of " + score);
-
 			if(score > bestScore){
 				bestScore = score;
 				bestTarget = possibleTarget;
