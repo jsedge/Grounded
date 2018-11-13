@@ -18,7 +18,9 @@ public class Character : MonoBehaviour {
 	}
 
 	public virtual void TakeDamage(float damageTaken){
+		Debug.Log("ouch?");
 		if(invulnTimer<= 0){
+			Debug.Log("Ouch!");
 			health-=damageTaken;
 			invulnTimer = invulnDuration;
 			if(health <= 0)

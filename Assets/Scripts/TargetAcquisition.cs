@@ -41,6 +41,9 @@ public class TargetAcquisition : MonoBehaviour {
 			if(targetWeights.ContainsKey(possibleTarget.tag)){
 				score = targetWeights[possibleTarget.tag];
 			}
+			float distance = Vector3.Distance(transform.position, possibleTarget.transform.position)/100f;
+			score/=distance;
+			Debug.Log("There is a " + possibleTarget.tag + " that is " + distance + " away with a score of " + score);
 
 			if(score > bestScore){
 				bestScore = score;
@@ -57,6 +60,10 @@ public class TargetAcquisition : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
+		if(other.gameObject == gameObject.transform.parent.gameObject){
+			// Ignore the object itself (its parent really)
+			return;
+		}
 		possibleTargets.Add(other.gameObject);
 	}
 

@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4392926517367930}
   - component: {fileID: 65307042612347070}
   - component: {fileID: 114221952112817550}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DetectionRadius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 111168674909165624}
   - component: {fileID: 114419224872153704}
   - component: {fileID: 114920277254028400}
+  - component: {fileID: 136817685728170162}
   m_Layer: 0
   m_Name: bug
   m_TagString: Enemy
@@ -307,7 +308,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183565865198416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.7, y: -67.33933, z: 81.4}
+  m_LocalPosition: {x: 38.7, y: -67.33933, z: 71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4686177459392620}
@@ -713,8 +714,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca15fccd9df464f528f11c961c356fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inTarget: 0
   target: {fileID: 0}
-  speed: 0
+  speed: 15
 --- !u!114 &114920277254028400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -727,6 +729,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 25
+  weapon: {fileID: 0}
+  invulnDuration: 0
+  damage: 10
+--- !u!136 &136817685728170162
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1183565865198416}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 3
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &143901434309708146
 CharacterController:
   m_ObjectHideFlags: 1
@@ -738,7 +756,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 3
-  m_Radius: 2
+  m_Radius: 0
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08

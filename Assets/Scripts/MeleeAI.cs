@@ -18,21 +18,23 @@ public class MeleeAI : GenericAI {
 		gravity = LevelManager.instance.gravity;
 	}
 		
-	// Update is called once per frame
-	void Update () {
-		if(target != null && !inTarget){
+	public override void Move(){
+		// Melee does damage through contact, so only need to move
+		Vector3 dir = new Vector3(0,-gravity,0);
+		if(target != null){
+			// Mindleslly charge the opponent until they collide, then stop for a bit
 			transform.LookAt(target.transform);
-			Vector3 dir = transform.forward;
-			dir.y -= gravity;
-			dir*=speed*Time.deltaTime;
-			characterController.Move(dir);
-			if(!animator.isPlaying){
-				animator.Play("Walk");
+			if(!inTarget){
+				dir += transform.forward;
 			}
+			if(!animator.isPlaying)
+				animator.Play("Walk");
 		}else{
 			animator.Play("Idle");
 		}
-		
+
+		dir*=speed*Time.deltaTime;
+		characterController.Move(dir);
 	}
 
 }

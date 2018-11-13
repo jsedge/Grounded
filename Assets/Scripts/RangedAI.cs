@@ -4,32 +4,61 @@ using UnityEngine;
 
 public class RangedAI : GenericAI {
 	public float speed;
+	public string allyTag;
 	private float gravity;
 	private CharacterController characterController;
 	private Character character;
+	private float idealRange;
 
 	// Use this for initialization
 	void Start(){
+		// Set up things we'll need, CharacterController for movement, character for their info
 		characterController = GetComponent(typeof(CharacterController)) as CharacterController;
-		//animator = GetComponent(typeof(Animation)) as Animation;
 		character = GetComponent(typeof(Character)) as Character;
-		Debug.Log(LevelManager.instance);
-		gravity = 1;//LevelManager.instance.gravity;
+		
+		// Grab the gravity for the current level
+		gravity = LevelManager.instance.gravity;
+		idealRange = (character.weapon.GetComponent("Weapon") as Weapon).range-2;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if(target != null && !character.CanHit(target.transform)){
+	/*
+	Implementation of movement for a generic ranged Actor
+	Called each from the GenericAI
+	*/
+	public override void Move(){
+		// To start, we apply gravity no matter what
+		Vector3 dir = new Vector3(0,-gravity,0);
+
+		if(target != null){
+			// Only move if we have a target
+
+			// First look at our distance to the target, and what we want it to be
+			float distance = Vector3.Distance(transform.position, target.transform.position);
+			float desiredDistance = target.tag == allyTag ? 10.0f : idealRange;
+
+			// Look at our target
 			transform.LookAt(target.transform);
-			Vector3 dir = transform.forward;
-			dir.y -= gravity;
-			dir*=speed*Time.deltaTime;
-			characterController.Move(dir);
-		}else if(target != null){
-			character.FireWeapon();
-		}else{
-			
+
+			// Move closer or away based on if we want to get closer or less close
+			if(distance > desiredDistance){
+				dir += transform.forward;
+			}else if( distance < desiredDistance){
+				dir -= transform.forward;
+			}
 		}
 		
+		// Finally, apply the movements
+		dir*=Time.deltaTime*speed;
+		characterController.Move(dir);
+	}
+
+	public override void Attack(){
+		// Nothing to attack then don't
+		if(target == null)
+			return;
+
+		// Only attack if it will hit and is not the ally
+		if(!target.CompareTag(allyTag) && character.CanHit(target.transform))
+			character.FireWeapon();
 	}
 }
