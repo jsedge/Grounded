@@ -6,7 +6,7 @@ public class RangedAI : GenericAI {
 	public float speed;
 	public string allyTag;
 	private float gravity;
-	private CharacterController characterController;
+	public CharacterController characterController;
 	private Character character;
 	private float idealRange;
 

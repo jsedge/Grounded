@@ -43,7 +43,6 @@ public class TargetAcquisition : MonoBehaviour {
 			}
 			float distance = Vector3.Distance(transform.position, possibleTarget.transform.position)/100f;
 			score/=distance;
-			Debug.Log("There is a " + possibleTarget.tag + " that is " + distance + " away with a score of " + score);
 
 			if(score > bestScore){
 				bestScore = score;

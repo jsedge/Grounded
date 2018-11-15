@@ -5,18 +5,23 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour {
 
 	public float speed = 1.0f;
-	// Gravity might want to come from the planet/area for all actors
 	private float gravity;
 	private bool onGround = true;
-	private CharacterController controller;
+	public CharacterController controller;
 	private PlayerCharacter playerCharacter;
 
 
 	// Use this for initialization
 	void Start () {
 		controller = GetComponent(typeof(CharacterController)) as CharacterController;
+		Debug.Log(controller);
 		playerCharacter = GetComponent(typeof(PlayerCharacter)) as PlayerCharacter;
 		gravity = LevelManager.instance.gravity;
+	}
+
+	public void UpdateController(){
+		controller = GetComponent(typeof(CharacterController)) as CharacterController;
+		Debug.Log(controller);
 	}
 	
 	// Update is called once per frame
@@ -32,6 +37,8 @@ public class PlayerControl : MonoBehaviour {
 
 		if(Input.GetButton("Fire1")){
 			gameObject.SendMessage("FireWeapon");
+		}else if(Input.GetButton("NextMember")){
+			SquadManager.instance.NextMember();
 		}
 	}
 }

@@ -669,8 +669,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 50, y: 5, z: 50}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 50, y: 5, z: 70}
+  m_Center: {x: 0, y: 0, z: 20}
 --- !u!111 &111168674909165624
 Animation:
   m_ObjectHideFlags: 1
@@ -716,7 +716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inTarget: 0
   target: {fileID: 0}
-  speed: 15
+  speed: 13
 --- !u!114 &114920277254028400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -731,7 +731,7 @@ MonoBehaviour:
   health: 25
   weapon: {fileID: 0}
   invulnDuration: 0
-  damage: 10
+  damage: 5
 --- !u!136 &136817685728170162
 CapsuleCollider:
   m_ObjectHideFlags: 1
