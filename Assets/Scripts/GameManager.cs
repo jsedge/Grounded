@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour {
 		levelSelect.SetActive(!levelSelect.activeSelf);
 		hud.SetActive(!hud.activeSelf);
 		var player = GameObject.FindGameObjectWithTag("Player");
-		player.SetActive(!player.activeSelf);
+		if(player != null)
+			player.SetActive(!player.activeSelf);
 	}
 
 	public void OpenLevel(string levelName){

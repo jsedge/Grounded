@@ -13,6 +13,7 @@ public class SquadManager : MonoBehaviour {
 	void Start(){
 		if(instance == null){
 			instance = this;
+			DontDestroyOnLoad(gameObject);
 		}else{
 			Destroy(gameObject);
 			return;
@@ -22,6 +23,13 @@ public class SquadManager : MonoBehaviour {
 	void Update(){
 		if(swapTimer>=0)
 			swapTimer-=Time.deltaTime;
+	}
+
+	void OnLevelLoad(){
+		foreach(var member in squad){
+			member.SetActive(true);
+			member.transform.position = gameObject.transform.position;
+		}
 	}
 
 	public void NextMember(){
