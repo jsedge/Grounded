@@ -5,6 +5,7 @@ using UnityEngine;
 public class TargetAcquisition : MonoBehaviour {
 	public List<string> tags;
 	public List<int> weights;
+	public GameObject defaultTarget;
 	private Dictionary<string,int> targetWeights;
 	private List<GameObject> possibleTargets;
 	public float reassessmentDelay = 2.0f;
@@ -52,7 +53,10 @@ public class TargetAcquisition : MonoBehaviour {
 		if(bestTarget != null){
 			parent.SendMessage("UpdateTarget", bestTarget);
 		}else{
-			parent.SendMessage("RemoveTarget");
+			if(defaultTarget == null)
+				parent.SendMessage("RemoveTarget");
+			else
+				parent.SendMessage("UpdateTarget", defaultTarget);
 		}
 		
 		reassessmentCooldown = reassessmentDelay;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RangedAI : GenericAI {
 	public float speed;
@@ -36,6 +37,11 @@ public class RangedAI : GenericAI {
 			float distance = Vector3.Distance(transform.position, target.transform.position);
 			float desiredDistance = target.tag == allyTag ? 10.0f : idealRange;
 
+			// If we get too far away from the ally we're following, just teleport to them
+			if(target.tag == allyTag && distance > 200){
+				gameObject.transform.position = target.transform.position;
+			}
+
 			// Look at our target
 			transform.LookAt(target.transform);
 
@@ -60,5 +66,10 @@ public class RangedAI : GenericAI {
 		// Only attack if it will hit and is not the ally
 		if(!target.CompareTag(allyTag) && character.CanHit(target.transform))
 			character.FireWeapon();
+	}
+
+	// Rather than remove the target, just go back to following the ally
+	public override void RemoveTarget(){
+		target = GameObject.FindGameObjectWithTag(allyTag);
 	}
 }

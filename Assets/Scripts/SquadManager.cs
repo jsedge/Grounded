@@ -47,6 +47,14 @@ public class SquadManager : MonoBehaviour {
 		
 	}
 
+	public void FollowPlayer(){
+		for(int i = 0; i < squad.Count; i++){
+			if(i == player)
+				continue;
+			
+		}
+	}
+
 	public void SelectMember(int member){
 		// Grab a reference to the squad member we're switching to and the current one
 		GameObject current = squad[player];

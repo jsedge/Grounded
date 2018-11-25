@@ -41,7 +41,7 @@ public class GenericAI : MonoBehaviour {
 		inTarget = false;
 	}
 
-	void RemoveTarget(){
+	public virtual void RemoveTarget(){
 		target = null;
 		inTarget = false;
 	}

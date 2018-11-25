@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb5636b93ebf4a4ab784bcc1d780e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStartLevel: 0
   gravity: 0
 --- !u!4 &765426660
 Transform:
@@ -235,7 +236,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1384522307}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 261, y: 170, z: 262}
+  m_LocalPosition: {x: 261, y: 54, z: 262}
   m_LocalScale: {x: 50, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
@@ -277,7 +278,7 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: f085fbcbe92c849799181adeb8d98858, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 2000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
