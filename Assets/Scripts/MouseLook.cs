@@ -8,13 +8,12 @@ public class MouseLook : MonoBehaviour {
 	public string inputAxis;
 	public float sensitivityX;
 	public float sensitivityY;
-	public bool useJoystick;
 	public bool swapAxis;
 	// Update is called once per frame
 	void Update () {
 		// Get the input from the Joystick or Mouse axis
 		float x,y;
-		if(!useJoystick){
+		if(!GameManager.instance.useJoystick){
 			x = Input.GetAxis("Mouse X") * sensitivityX;
 			y = -Input.GetAxis("Mouse Y") * sensitivityY;
 		}else{

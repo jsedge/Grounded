@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject levelSelect;
 	public GameObject hud;
 	public static GameManager instance;
+	public bool useJoystick;
 
 	void Start(){
 		if(instance == null){
