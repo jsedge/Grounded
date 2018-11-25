@@ -8,6 +8,8 @@ public class SquadManager : MonoBehaviour {
 	public static SquadManager instance;
 	public float swapCooldown;
 	private float swapTimer;
+	public float lightCooldown;
+	private float lightTimer;
 	
 
 	void Start(){
@@ -23,6 +25,12 @@ public class SquadManager : MonoBehaviour {
 	void Update(){
 		if(swapTimer>=0)
 			swapTimer-=Time.deltaTime;
+		if(lightTimer >= 0)
+			lightTimer-=Time.deltaTime;
+	}
+
+	public GameObject GetPlayer(){
+		return squad[player];
 	}
 
 	void OnLevelLoad(){
@@ -53,6 +61,18 @@ public class SquadManager : MonoBehaviour {
 				continue;
 			
 		}
+	}
+
+	public void ToggleLights(){
+		if(lightTimer<=0){
+			Debug.Log("Toggling Lights");
+			foreach(var member in squad){
+				var light = member.GetComponent("Light") as Light;
+				light.enabled = !light.isActiveAndEnabled;
+			}
+			lightTimer = lightCooldown;
+		}
+		
 	}
 
 	public void SelectMember(int member){

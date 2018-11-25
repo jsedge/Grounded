@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour {
 	public void ToggleLevelSelect(){
 		levelSelect.SetActive(!levelSelect.activeSelf);
 		hud.SetActive(!hud.activeSelf);
-		var player = GameObject.FindGameObjectWithTag("Player");
+		var player = SquadManager.instance.GetPlayer(); //= GameObject.FindGameObjectWithTag("Player");
 		if(player != null)
 			player.SetActive(!player.activeSelf);
 	}

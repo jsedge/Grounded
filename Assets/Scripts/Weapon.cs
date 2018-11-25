@@ -11,13 +11,11 @@ public class Weapon : MonoBehaviour{
 
 	// Use this for initialization
 	public void FireWeapon(){
-		if(fireCooldown<=0){
-			Debug.Log("Pew pew!");
+		if(fireCooldown<=0){ 
 			Debug.DrawRay(transform.position,-transform.up * range, Color.green);
 			fireCooldown = fireRate;
 			RaycastHit hit;
 			if(Physics.Raycast(transform.position, -transform.up, out hit, range)){
-				Debug.Log("I hit a " + hit.collider.gameObject.tag);
 				var y = hit.point;
 				y.y+=25;
 				Debug.DrawLine(hit.point, y, Color.red,5);

@@ -39,6 +39,8 @@ public class PlayerControl : MonoBehaviour {
 			gameObject.SendMessage("FireWeapon");
 		}else if(Input.GetButton("NextMember")){
 			SquadManager.instance.NextMember();
+		}else if(Input.GetButton("Toggle Light")){
+			SquadManager.instance.ToggleLights();
 		}
 	}
 }
