@@ -8,6 +8,7 @@ public class MeleeAI : GenericAI {
 	*/
 	
 	public float speed;
+	public bool flying = false;
 	private float gravity;
 	private CharacterController characterController;
 	private Animation animator;
@@ -15,7 +16,10 @@ public class MeleeAI : GenericAI {
 	void Start(){
 		characterController = GetComponent(typeof(CharacterController)) as CharacterController;
 		animator = GetComponent(typeof(Animation)) as Animation;
-		gravity = LevelManager.instance.gravity;
+		if(!flying)
+			gravity = LevelManager.instance.gravity;
+		else
+			gravity = 0;
 	}
 		
 	public override void Move(){
@@ -28,7 +32,7 @@ public class MeleeAI : GenericAI {
 				dir += transform.forward;
 			}
 			if(!animator.isPlaying)
-				animator.Play("Walk");
+				animator.Play("Move");
 		}else{
 			animator.Play("Idle");
 		}
