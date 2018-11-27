@@ -11,10 +11,14 @@ public class PlayerCharacter : Character {
 	public override void TakeDamage(float damageTaken){
 		base.TakeDamage(damageTaken);
 		if(isPlayer)
-			UpdateHealthBar();
+			UIManager.instance.UpdatePlayerHealth(health,250);
 	}
 
-	public void UpdateHealthBar(){
-		healthBar.fillAmount = health/250;
+	public override void Die(){
+		// If it is the player, select the next squad mate before dying
+		if(isPlayer){
+			SquadManager.instance.NextMember();
+		}
+		base.Die();
 	}
 }

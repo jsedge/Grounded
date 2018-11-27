@@ -9,6 +9,19 @@ public class Weapon : MonoBehaviour{
 	public float fireRate;
 	private float fireCooldown;
 
+	void Start(){
+		if(transform.parent.gameObject.CompareTag("Player"))
+				UIManager.instance.UpdateWeaponName(gameObject.name);
+	}
+
+	void Update(){
+		if(fireCooldown >= 0){
+			fireCooldown-=Time.deltaTime;
+			if(transform.parent.gameObject.CompareTag("Player"))
+				UIManager.instance.UpdateWeaponCooldown(fireCooldown, fireRate);
+		}
+	}
+
 	// Use this for initialization
 	public void FireWeapon(){
 		if(fireCooldown<=0){ 
@@ -18,13 +31,11 @@ public class Weapon : MonoBehaviour{
 			if(Physics.Raycast(transform.position, -transform.up, out hit, range)){
 				var y = hit.point;
 				y.y+=25;
-				Debug.DrawLine(hit.point, y, Color.red,5);
+				//Debug.DrawLine(hit.point, y, Color.red,5);
 				if(hit.collider.gameObject.CompareTag("Enemy")){
 					hit.collider.gameObject.SendMessage("TakeDamage", damage);
 				}
 			} 
-		}else{
-			fireCooldown-=Time.deltaTime;
 		}
 		
 	}

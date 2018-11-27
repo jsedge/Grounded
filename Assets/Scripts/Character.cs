@@ -8,7 +8,7 @@ public class Character : MonoBehaviour {
 	public float invulnDuration;
 	private float invulnTimer;
 	
-	void Die(){
+	public virtual void Die(){
 		Destroy(gameObject);
 	}
 
@@ -19,7 +19,6 @@ public class Character : MonoBehaviour {
 
 	public virtual void TakeDamage(float damageTaken){
 		if(invulnTimer<= 0){
-			Debug.Log("Ouch!");
 			health-=damageTaken;
 			invulnTimer = invulnDuration;
 			if(health <= 0)

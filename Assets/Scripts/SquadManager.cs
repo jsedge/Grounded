@@ -107,7 +107,10 @@ public class SquadManager : MonoBehaviour {
 		nextChar.weapon.GetComponent<MouseLook>().enabled = true;
 
 		// Force an update of the UI
-		nextChar.UpdateHealthBar();
+		UIManager.instance.UpdatePlayerHealth(nextChar.health,250);
+		UIManager.instance.UpdateWeaponName(nextChar.weapon.gameObject.name);
+		// This makes the cd bar full, if it shouldnt be itll be overwritten by the update immediately so its fine
+		UIManager.instance.UpdateWeaponCooldown(0,1); 
 
 		// Move the camera to the newly controlled squad member, keeping its local position
 		current.transform.Find("Camera").SetParent(next.transform, false);
