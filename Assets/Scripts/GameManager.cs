@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void OpenLevel(string levelName){
+		Debug.Log("Openining " + levelName);
 		SceneManager.LoadScene(levelName);
+		Debug.Log("Done loading");
 	}
 }
