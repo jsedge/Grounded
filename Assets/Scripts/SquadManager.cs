@@ -36,7 +36,10 @@ public class SquadManager : MonoBehaviour {
 	void OnLevelLoad(){
 		foreach(var member in squad){
 			member.SetActive(true);
-			member.transform.position = gameObject.transform.position;
+			var spawnPoint = gameObject.transform.position;
+			spawnPoint.x+=Random.Range(-10,10);
+			spawnPoint.z+=Random.Range(-10,10);
+			member.transform.position = spawnPoint; 
 		}
 	}
 
@@ -105,6 +108,8 @@ public class SquadManager : MonoBehaviour {
 		// Toggle weapon control
 		curChar.weapon.GetComponent<MouseLook>().enabled = false;
 		nextChar.weapon.GetComponent<MouseLook>().enabled = true;
+
+		nextChar.weapon.transform.localRotation = curChar.weapon.transform.localRotation;
 
 		// Force an update of the UI
 		UIManager.instance.UpdatePlayerHealth(nextChar.health,250);
