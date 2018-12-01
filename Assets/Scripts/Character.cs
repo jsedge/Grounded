@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : MonoBehaviour {
+    public float maxHealth;
 	public float health;
 	public GameObject weapon;
     public GameObject equipment;
@@ -18,6 +19,8 @@ public class Character : MonoBehaviour {
 	void Update () {
 		if(invulnTimer > 0)
 			invulnTimer -= Time.deltaTime;
+        if (health > maxHealth)
+            health = maxHealth;
 	}
 
 	public virtual void TakeDamage(float damageTaken){
