@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class RangedAI : GenericAI {
-	public float speed;
 	public string allyTag;
 	private float gravity;
 	public CharacterController characterController;
@@ -54,7 +53,7 @@ public class RangedAI : GenericAI {
 		}
 		
 		// Finally, apply the movements
-		dir*=Time.deltaTime*speed;
+		dir*=Time.deltaTime*character.speed;
 		characterController.Move(dir);
 	}
 

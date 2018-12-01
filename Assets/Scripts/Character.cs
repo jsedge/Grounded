@@ -5,7 +5,10 @@ using UnityEngine;
 public class Character : MonoBehaviour {
 	public float health;
 	public GameObject weapon;
+    public GameObject equipment;
 	public float invulnDuration;
+    public float pickupRange;
+    public float speed = 10f;
 	private float invulnTimer;
 	
 	public virtual void Die(){
@@ -29,6 +32,24 @@ public class Character : MonoBehaviour {
 	public void FireWeapon(){
 		weapon.SendMessage("FireWeapon");
 	}
+
+    public void UseEquipment()
+    {
+        equipment.SendMessage("OnUse", gameObject);
+    }
+
+    public void PickupItem(){
+        RaycastHit hit;
+        if (Physics.Raycast(weapon.transform.position, -weapon.transform.up, out hit, pickupRange))
+        {
+            Debug.DrawLine(-weapon.transform.up, -weapon.transform.up*pickupRange, Color.yellow, 5);
+            // Check item type
+            if (hit.collider.gameObject.CompareTag("Item"))
+            {
+                hit.collider.gameObject.SendMessage("OnPickup", gameObject);
+            }
+        }
+    }
 
 	public bool CanHit(Transform target){
 		if(weapon==null)
