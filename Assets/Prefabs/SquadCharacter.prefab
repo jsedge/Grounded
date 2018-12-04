@@ -303,7 +303,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inTarget: 0
   target: {fileID: 0}
-  speed: 10
   allyTag: Player
   characterController: {fileID: 0}
 --- !u!114 &114287271736889832
@@ -350,7 +349,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 250
   weapon: {fileID: 1625673324774392}
+  equipment: {fileID: 1132539765371726, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
   invulnDuration: 1
+  pickupRange: 5
+  speed: 10
   healthBar: {fileID: 0}
   isPlayer: 0
 --- !u!114 &114514269841142484
@@ -364,7 +366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c026bb993f5e4efc89ee9029bc43b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
   controller: {fileID: 0}
 --- !u!114 &114598503904601072
 MonoBehaviour:

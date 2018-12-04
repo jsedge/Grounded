@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour{
+public class Weapon : MonoBehaviour, Item{
 	
 	public float range;
 	public float damage;
@@ -39,4 +39,39 @@ public class Weapon : MonoBehaviour{
 		}
 		
 	}
+
+    public void OnPickup(GameObject character)
+    {
+        // Character class
+        Character charClass = character.GetComponent<Character>();
+
+        // Move old weapon
+        charClass.weapon.transform.parent = null;
+        charClass.weapon.transform.position = gameObject.transform.position;
+        charClass.weapon.GetComponent<MouseLook>().enabled = false;
+
+        // Move new weapon
+        gameObject.transform.parent = character.transform;
+        gameObject.transform.localPosition = new Vector3(0.46f, 0.592f, 0.312f);
+        gameObject.GetComponent<MouseLook>().enabled = true;
+
+        // Set rotation of weapons
+        Quaternion temp = gameObject.transform.rotation;
+        gameObject.transform.rotation = charClass.weapon.transform.rotation;
+        charClass.weapon.transform.rotation = temp;
+
+        // "Drop" the current weapon
+        charClass.weapon.SendMessage("OnDrop", character);
+
+        // Set the new weapon as the character's current weapon
+        charClass.weapon = gameObject;
+
+        // Update the UI weapon name
+        UIManager.instance.UpdateWeaponName(gameObject.name);
+    }
+
+    public void OnDrop(GameObject character) { }
+
+    public void OnUse(GameObject character) { }
+
 }

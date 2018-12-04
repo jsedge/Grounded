@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
 
-	public float speed = 1.0f;
 	private float gravity;
 	private bool onGround = true;
 	public CharacterController controller;
@@ -31,7 +30,7 @@ public class PlayerControl : MonoBehaviour {
 			moveDir.y-=gravity; 
 
 		moveDir = transform.TransformDirection(moveDir);
-		moveDir*=Time.deltaTime*speed;
+		moveDir*=Time.deltaTime*playerCharacter.speed;
 		var flags = controller.Move(moveDir);
 		onGround = (flags & CollisionFlags.CollidedBelow)!=0;
 
@@ -41,6 +40,10 @@ public class PlayerControl : MonoBehaviour {
 			SquadManager.instance.NextMember();
 		}else if(Input.GetButton("Toggle Light")){
 			SquadManager.instance.ToggleLights();
-		}
+		}else if(Input.GetButtonDown("Pickup Item")){
+            gameObject.SendMessage("PickupItem");
+        }else if(Input.GetButton("Use Equipment")) {
+            gameObject.SendMessage("UseEquipment");
+        }
 	}
 }

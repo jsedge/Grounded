@@ -230,7 +230,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 75
   weapon: {fileID: 1381412851783168}
+  equipment: {fileID: 1132539765371726, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
   invulnDuration: 0.5
+  pickupRange: 5
+  speed: 10
 --- !u!114 &114478525249245756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -246,6 +249,7 @@ MonoBehaviour:
   - Enemy
   - Player
   weights: 0500000002000000
+  defaultTarget: {fileID: 0}
   reassessmentDelay: 2
 --- !u!114 &114625952855392744
 MonoBehaviour:
@@ -260,8 +264,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inTarget: 0
   target: {fileID: 0}
-  speed: 10
   allyTag: Player
+  characterController: {fileID: 0}
 --- !u!143 &143399924987544814
 CharacterController:
   m_ObjectHideFlags: 1

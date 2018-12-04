@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour {
 	public Image healthBar;
 	public Image weaponInfo;
 	public Text weaponName;
+    public Image equipmentInfo;
+    public Text equipmentName;
 	public static UIManager instance;
 
 	void Awake(){
@@ -28,7 +30,17 @@ public class UIManager : MonoBehaviour {
 		weaponInfo.fillAmount = (total-current)/total;
 	}
 
-	public void UpdateWeaponName(string name){
+    public void UpdateEquipmentCooldown(float current, float total)
+    {
+        equipmentInfo.fillAmount = (total - current) / total;
+    }
+
+    public void UpdateWeaponName(string name){
 		weaponName.text = name;
 	}
+
+    public void UpdateEquipmentName(string name)
+    {
+        equipmentName.text = name;
+    }
 }
