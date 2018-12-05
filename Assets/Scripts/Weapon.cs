@@ -9,6 +9,10 @@ public class Weapon : MonoBehaviour, Item{
 	public float fireRate; 
 	public float weightPenalty;
 	private float fireCooldown;
+    public GameObject tracer;
+    // Note: Tracers should always be visible for a set number of frames regardless of how quick the game is running.
+    private int tracerFrames;
+    public int tracerTime;
 
 	void Start(){
 		if(transform.parent.gameObject.CompareTag("Player"))
@@ -16,9 +20,13 @@ public class Weapon : MonoBehaviour, Item{
 	}
 
 	void Update(){
-		if(fireCooldown >= 0){
+        if (tracerFrames <= 0)
+            tracer.GetComponent<LineRenderer>().enabled = false;
+        else
+            tracerFrames--;
+        if (fireCooldown >= 0){
 			fireCooldown-=Time.deltaTime;
-			if(transform.parent.gameObject.CompareTag("Player"))
+            if (transform.parent.gameObject.CompareTag("Player"))
 				UIManager.instance.UpdateWeaponCooldown(fireCooldown, fireRate);
 		}
 	}
@@ -28,6 +36,8 @@ public class Weapon : MonoBehaviour, Item{
 		if(fireCooldown<=0){ 
 			Debug.DrawRay(transform.position,-transform.up * range, Color.green);
 			fireCooldown = fireRate;
+            tracerFrames = tracerTime;
+            tracer.GetComponent<LineRenderer>().enabled = true;
 			RaycastHit hit;
 			if(Physics.Raycast(transform.position, -transform.up, out hit, range)){
 				var y = hit.point;
