@@ -19,6 +19,7 @@ public class PlayerCharacter : Character {
 		if(isPlayer){
 			SquadManager.instance.NextMember();
 		}
+		SquadManager.instance.ReportDeath(gameObject);
 		base.Die();
 	}
 }

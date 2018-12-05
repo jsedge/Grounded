@@ -66,6 +66,10 @@ public class SquadManager : MonoBehaviour {
 		}
 	}
 
+	public void ReportDeath(GameObject deadMember){
+		squad.Remove(deadMember);
+	}
+
 	public void ToggleLights(){
 		if(lightTimer<=0){
 			Debug.Log("Toggling Lights");

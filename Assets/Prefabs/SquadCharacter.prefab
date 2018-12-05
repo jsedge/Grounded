@@ -319,6 +319,7 @@ MonoBehaviour:
   range: 15
   damage: 0.5
   fireRate: 0.1
+  weightPenalty: 0
 --- !u!114 &114331883588020826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,6 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713482503ad244612911f991ccfaf1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 250
   health: 250
   weapon: {fileID: 1625673324774392}
   equipment: {fileID: 1132539765371726, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
