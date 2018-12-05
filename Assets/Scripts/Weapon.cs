@@ -6,7 +6,8 @@ public class Weapon : MonoBehaviour, Item{
 	
 	public float range;
 	public float damage;
-	public float fireRate;
+	public float fireRate; 
+	public float weightPenalty;
 	private float fireCooldown;
 
 	void Start(){
@@ -40,7 +41,7 @@ public class Weapon : MonoBehaviour, Item{
 		
 	}
 
-    public void OnPickup(GameObject character)
+    public virtual void OnPickup(GameObject character)
     {
         // Character class
         Character charClass = character.GetComponent<Character>();
@@ -49,6 +50,7 @@ public class Weapon : MonoBehaviour, Item{
         charClass.weapon.transform.parent = null;
         charClass.weapon.transform.position = gameObject.transform.position;
         charClass.weapon.GetComponent<MouseLook>().enabled = false;
+		charClass.speed-=weightPenalty;
 
         // Move new weapon
         gameObject.transform.parent = character.transform;
@@ -70,8 +72,12 @@ public class Weapon : MonoBehaviour, Item{
         UIManager.instance.UpdateWeaponName(gameObject.name);
     }
 
-    public void OnDrop(GameObject character) { }
+    public virtual void OnDrop(GameObject character) {
+		Character charClass = character.GetComponent<Character>();
 
-    public void OnUse(GameObject character) { }
+        charClass.speed += weightPenalty;
+	 }
+
+    public virtual void OnUse(GameObject character) { }
 
 }

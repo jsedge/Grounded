@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4606273854642212}
   - component: {fileID: 33737296147595926}
   - component: {fileID: 23929909549374308}
-  - component: {fileID: 114449934276048212}
   - component: {fileID: 114817430966258438}
   - component: {fileID: 65131636008300126}
+  - component: {fileID: 114741998979906376}
   m_Layer: 0
   m_Name: Heavy SMG
   m_TagString: Item
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000006, y: 2.0000002, z: 1.0000005}
   m_Center: {x: 0.000000059604645, y: -3.719247e-15, z: -0.00000008940698}
---- !u!114 &114449934276048212
+--- !u!114 &114741998979906376
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,13 +106,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1519400811562588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b96eb6140512e49acff7092742d0a0, type: 3}
+  m_Script: {fileID: 11500000, guid: e33f74a9fa86a4b1984179156d0f3d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   range: 15
   damage: 1.5
   fireRate: 0.2
-  speedChange: -4
+  weightPenalty: 4
 --- !u!114 &114817430966258438
 MonoBehaviour:
   m_ObjectHideFlags: 1

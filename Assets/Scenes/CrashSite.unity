@@ -253,6 +253,11 @@ Prefab:
       propertyPath: equipment
       value: 
       objectReference: {fileID: 2065684699}
+    - target: {fileID: 114287271736889832, guid: ff94f44ac21fc480cabf2e0109be4422,
+        type: 2}
+      propertyPath: weightPenalty
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff94f44ac21fc480cabf2e0109be4422, type: 2}
   m_IsPrefabAsset: 0
@@ -956,11 +961,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4636815557271782, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.27000013
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4636815557271782, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.8700004
+      value: 5.8
       objectReference: {fileID: 0}
     - target: {fileID: 4636815557271782, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
       propertyPath: m_LocalPosition.z

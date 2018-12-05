@@ -33,7 +33,7 @@ public class Equipment : MonoBehaviour, Item {
         }
     }
 
-    public void OnPickup (GameObject character) {
+    public virtual void OnPickup (GameObject character) {
         // Character class
         Character charClass = character.GetComponent<Character>();
 
@@ -61,10 +61,14 @@ public class Equipment : MonoBehaviour, Item {
         // Update the UI equipment cooldown
         UIManager.instance.UpdateEquipmentCooldown(cooldown, maxCooldown);
 
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+
         attachedCharacter = character;
     }
 	
-	public void OnDrop (GameObject character) { }
+	public virtual void OnDrop (GameObject character) {
+        gameObject.GetComponent<MeshRenderer>().enabled = true;
+     }
 
     public void OnUse(GameObject character)
     {
@@ -77,8 +81,8 @@ public class Equipment : MonoBehaviour, Item {
         }
     }
 
-    public void Activate(GameObject character) { }
+    public virtual void Activate(GameObject character) { }
 
-    public void Deactivate(GameObject character) { }
+    public virtual void Deactivate(GameObject character) { }
 
 }

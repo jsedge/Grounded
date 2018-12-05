@@ -6,7 +6,7 @@ public class EquipSpeed : Equipment {
 
     public float speedChange = 4.0f;
 
-    public void OnPickup(GameObject character)
+    public override void OnPickup(GameObject character)
     {
         // Character class
         Character charClass = character.GetComponent<Character>();
@@ -16,11 +16,13 @@ public class EquipSpeed : Equipment {
         charClass.speed += speedChange;
     }
 
-    public void OnDrop(GameObject character)
+    public override void OnDrop(GameObject character)
     {
         Character charClass = character.GetComponent<Character>();
 
         charClass.speed -= speedChange;
+
+        base.OnDrop(character);
     }
 
 }
