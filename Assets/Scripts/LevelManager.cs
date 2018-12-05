@@ -11,14 +11,15 @@ public class LevelManager : MonoBehaviour {
 	public float gravity;
 	public List<GameObject> enemyTypes;
 	public GameObject enemyObject;
+	public string infoText;
 	// Use this for initialization
 	void Awake () {
 		if(instance == null){
 			instance = this;
-			//if(!isStartLevel)
-			//	GameManager.instance.ToggleLevelSelect();
-			//var squadManager = GameObject.Find("Squad");
-			//squadManager.SendMessage("OnLevelLoad");
+			if(!isStartLevel)
+				GameManager.instance.ToggleLevelSelect();
+			var squadManager = GameObject.Find("Squad");
+			squadManager.SendMessage("OnLevelLoad");
 			InitializeLevel();
 		}else{
 			Destroy(gameObject);
@@ -39,6 +40,8 @@ public class LevelManager : MonoBehaviour {
 
 			}
 		}
+
+		UIManager.instance.UpdateInformation(infoText);
 	}
 	
 }
