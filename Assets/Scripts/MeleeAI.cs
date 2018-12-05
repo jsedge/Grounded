@@ -39,9 +39,9 @@ public class MeleeAI : GenericAI {
 			if(!inTarget){
 				dir += transform.forward;
 			}
-			if(!animator.isPlaying)
+			if(animator != null &&!animator.isPlaying)
 				animator.Play("Move");
-		}else{
+		}else if(animator != null){
 			animator.Play("Idle");
 		}
 

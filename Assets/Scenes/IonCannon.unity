@@ -594,12 +594,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb5636b93ebf4a4ab784bcc1d780e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelName: IonCannon
   isStartLevel: 0
   gravity: 0
   enemyTypes:
   - {fileID: 1471396253633166, guid: f62f0b914c6674b8caa0ea1f7e3f3afe, type: 2}
   - {fileID: 1183565865198416, guid: a35dd4c7ff9f94f949c774da4cf02417, type: 2}
   enemyObject: {fileID: 1748057793}
+  infoText: The Ion Cannon should be here
 --- !u!4 &765426660
 Transform:
   m_ObjectHideFlags: 0

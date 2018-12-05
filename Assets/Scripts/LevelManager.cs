@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour {
 	/* This class holds information for the current level, create a new one per scene
 	* Describes behaviour such as the gravity on a per zone basis
 	*/
+	public string levelName;
 	public static LevelManager instance;
 	public bool isStartLevel = false;
 	public float gravity;
