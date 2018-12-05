@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44659358, g: 0.49642974, b: 0.5748251, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -633,7 +633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelSelect: {fileID: 1452228207}
   hud: {fileID: 1979296967}
-  useJoystick: 0
+  useJoystick: 1
 --- !u!1 &344994668
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74193430600347bb8dee81a25818ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
   health: 25
   weapon: {fileID: 0}
   equipment: {fileID: 0}
@@ -1521,51 +1522,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 919600371}
   m_CullTransparentMesh: 0
---- !u!1 &929978259
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 929978260}
-  - component: {fileID: 929978261}
-  m_Layer: 0
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &929978260
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 929978259}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 185.46944, y: 68.97664, z: 96.04183}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &929978261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 929978259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 225a3555ca7f74b629f0cc217d16f1d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 1832707223}
-  weaponInfo: {fileID: 1581378885}
-  weaponName: {fileID: 1125315425}
-  equipmentInfo: {fileID: 0}
-  equipmentName: {fileID: 1539580917}
 --- !u!1 &980935626 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1625673324774392, guid: ff94f44ac21fc480cabf2e0109be4422,
@@ -2028,7 +1984,7 @@ Transform:
   - {fileID: 1328588022}
   - {fileID: 1005372315}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1255372151
 MonoBehaviour:
@@ -2082,7 +2038,7 @@ Transform:
   - {fileID: 1090043704}
   - {fileID: 1605058190}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1274795357
 Prefab:
@@ -2998,7 +2954,7 @@ Transform:
   - {fileID: 1070423685}
   - {fileID: 611701950}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1580007869
 GameObject:
@@ -3570,6 +3526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1892107029}
   - component: {fileID: 1892107030}
+  - component: {fileID: 1892107031}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -3603,6 +3560,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 063ff004ecd94402ea16e6b363550efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1892107031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1892107028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225a3555ca7f74b629f0cc217d16f1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 1832707223}
+  weaponInfo: {fileID: 1581378885}
+  weaponName: {fileID: 1125315425}
+  equipmentInfo: {fileID: 344994670}
+  equipmentName: {fileID: 1539580917}
 --- !u!1 &1949253886
 GameObject:
   m_ObjectHideFlags: 0
