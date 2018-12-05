@@ -33,7 +33,7 @@ public class GenericAI : MonoBehaviour {
 		return;
 	}
 
-	void UpdateTarget(GameObject newTarget){
+	public virtual void UpdateTarget(GameObject newTarget){
 		if(target == newTarget){
 			return;
 		}
