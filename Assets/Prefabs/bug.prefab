@@ -730,7 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74193430600347bb8dee81a25818ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 25
   health: 25
   weapon: {fileID: 0}
   equipment: {fileID: 0}

@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour {
 	public Text weaponName;
     public Image equipmentInfo;
     public Text equipmentName;
+	public Text information;
 	public static UIManager instance;
 
 	void Awake(){
@@ -43,4 +44,9 @@ public class UIManager : MonoBehaviour {
     {
         equipmentName.text = name;
     }
+
+	public void UpdateInformation(string info){
+		information.text = info;
+		information.transform.parent.gameObject.SetActive(true);
+	}
 }
