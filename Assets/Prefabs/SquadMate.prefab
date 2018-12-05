@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30ffce5e0e9946049eb293033b55e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 250
   health: 75
   weapon: {fileID: 1381412851783168}
   equipment: {fileID: 1132539765371726, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
