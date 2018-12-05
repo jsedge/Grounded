@@ -75,7 +75,7 @@ public class MeleeAI : GenericAI {
 		location+= new Vector3(Random.Range(-75,75),0,Random.Range(-75,75));
 		target = new GameObject("Target");
 		target.transform.position = location;
-		target.transform.SetParent(transform);
+		//target.transform.SetParent(transform);
 	}
 
 	public override void RemoveTarget(){

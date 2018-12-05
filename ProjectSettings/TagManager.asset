@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Squad
   - Item
+  - EnemySpawn
   layers:
   - Default
   - TransparentFX
