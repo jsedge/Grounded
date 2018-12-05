@@ -261,7 +261,7 @@ Prefab:
     - target: {fileID: 114466904921262806, guid: ff94f44ac21fc480cabf2e0109be4422,
         type: 2}
       propertyPath: maxHealth
-      value: 0
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff94f44ac21fc480cabf2e0109be4422, type: 2}
@@ -796,6 +796,11 @@ Prefab:
       propertyPath: equipment
       value: 
       objectReference: {fileID: 52957873}
+    - target: {fileID: 114466904921262806, guid: ff94f44ac21fc480cabf2e0109be4422,
+        type: 2}
+      propertyPath: maxHealth
+      value: 250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff94f44ac21fc480cabf2e0109be4422, type: 2}
   m_IsPrefabAsset: 0
@@ -1742,7 +1747,7 @@ Prefab:
     - target: {fileID: 114466904921262806, guid: ff94f44ac21fc480cabf2e0109be4422,
         type: 2}
       propertyPath: maxHealth
-      value: 0
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff94f44ac21fc480cabf2e0109be4422, type: 2}
@@ -2324,7 +2329,7 @@ Prefab:
     - target: {fileID: 114466904921262806, guid: ff94f44ac21fc480cabf2e0109be4422,
         type: 2}
       propertyPath: maxHealth
-      value: 0
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff94f44ac21fc480cabf2e0109be4422, type: 2}
@@ -2408,6 +2413,7 @@ MonoBehaviour:
   gravity: 1
   enemyTypes: []
   enemyObject: {fileID: 0}
+  infoText: 
 --- !u!1001 &1362795274
 Prefab:
   m_ObjectHideFlags: 0

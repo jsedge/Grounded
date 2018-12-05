@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour {
 	public float gravity;
 	public List<GameObject> enemyTypes;
 	public GameObject enemyObject;
+	public string infoText;
 	// Use this for initialization
 	void Awake () {
 		if(instance == null){
@@ -39,6 +40,8 @@ public class LevelManager : MonoBehaviour {
 
 			}
 		}
+
+		UIManager.instance.UpdateInformation(infoText);
 	}
 	
 }

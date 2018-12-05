@@ -36,4 +36,8 @@ public class GameManager : MonoBehaviour {
 		SceneManager.LoadScene(levelName);
 		Debug.Log("Done loading");
 	}
+
+	public void GameOver(){
+		UIManager.instance.UpdateInformation("Game over");
+	}
 }

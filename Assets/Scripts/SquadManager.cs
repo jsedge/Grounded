@@ -47,7 +47,6 @@ public class SquadManager : MonoBehaviour {
 		if(swapTimer<=0){
 			if(player + 1 < squad.Count){
 				SelectMember(player+1);
-				player++;	
 			}else{
 				SelectMember(0);
 				player = 0;
@@ -67,7 +66,12 @@ public class SquadManager : MonoBehaviour {
 	}
 
 	public void ReportDeath(GameObject deadMember){
+		if(player > 0)
+			player--;
 		squad.Remove(deadMember);
+		if(squad.Count == 0){
+			GameManager.instance.GameOver();
+		}
 	}
 
 	public void ToggleLights(){
@@ -122,6 +126,7 @@ public class SquadManager : MonoBehaviour {
 		UIManager.instance.UpdateWeaponCooldown(0,1); 
 
 		// Move the camera to the newly controlled squad member, keeping its local position
+		Debug.Log(current.transform.Find("Camera") == null);
 		current.transform.Find("Camera").SetParent(next.transform, false);
 	}
 }
