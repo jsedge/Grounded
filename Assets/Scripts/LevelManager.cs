@@ -15,10 +15,10 @@ public class LevelManager : MonoBehaviour {
 	void Awake () {
 		if(instance == null){
 			instance = this;
-			//if(!isStartLevel)
-			//	GameManager.instance.ToggleLevelSelect();
-			//var squadManager = GameObject.Find("Squad");
-			//squadManager.SendMessage("OnLevelLoad");
+			if(!isStartLevel)
+				GameManager.instance.ToggleLevelSelect();
+			var squadManager = GameObject.Find("Squad");
+			squadManager.SendMessage("OnLevelLoad");
 			InitializeLevel();
 		}else{
 			Destroy(gameObject);
