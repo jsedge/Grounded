@@ -650,12 +650,27 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5000001
       objectReference: {fileID: 0}
+    - target: {fileID: 114497538062646804, guid: 67be9e21d16dd429a923d10050a608c7,
+        type: 2}
+      propertyPath: tracerTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114497538062646804, guid: 67be9e21d16dd429a923d10050a608c7,
+        type: 2}
+      propertyPath: tracer
+      value: 
+      objectReference: {fileID: 817417682}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &817417681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4525322126667180, guid: 67be9e21d16dd429a923d10050a608c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 817417680}
+--- !u!1 &817417682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1820381535564602, guid: 67be9e21d16dd429a923d10050a608c7,
     type: 2}
   m_PrefabInternal: {fileID: 817417680}
 --- !u!1 &1099717194
@@ -831,12 +846,27 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5000001
       objectReference: {fileID: 0}
+    - target: {fileID: 114497538062646804, guid: 67be9e21d16dd429a923d10050a608c7,
+        type: 2}
+      propertyPath: tracerTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114497538062646804, guid: 67be9e21d16dd429a923d10050a608c7,
+        type: 2}
+      propertyPath: tracer
+      value: 
+      objectReference: {fileID: 1393383427}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1393383426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4525322126667180, guid: 67be9e21d16dd429a923d10050a608c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1393383425}
+--- !u!1 &1393383427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1820381535564602, guid: 67be9e21d16dd429a923d10050a608c7,
     type: 2}
   m_PrefabInternal: {fileID: 1393383425}
 --- !u!1 &1653476830
@@ -1002,12 +1032,27 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5000001
       objectReference: {fileID: 0}
+    - target: {fileID: 114497538062646804, guid: 67be9e21d16dd429a923d10050a608c7,
+        type: 2}
+      propertyPath: tracerTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114497538062646804, guid: 67be9e21d16dd429a923d10050a608c7,
+        type: 2}
+      propertyPath: tracer
+      value: 
+      objectReference: {fileID: 2068145569}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &2068145568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4525322126667180, guid: 67be9e21d16dd429a923d10050a608c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 2068145567}
+--- !u!1 &2068145569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1820381535564602, guid: 67be9e21d16dd429a923d10050a608c7,
     type: 2}
   m_PrefabInternal: {fileID: 2068145567}
 --- !u!1 &2108048724
