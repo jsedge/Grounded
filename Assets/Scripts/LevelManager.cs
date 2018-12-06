@@ -42,7 +42,6 @@ public class LevelManager : MonoBehaviour {
 			}
 		}
 
-		UIManager.instance.UpdateInformation(infoText);
 	}
 	
 }
