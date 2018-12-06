@@ -14,6 +14,7 @@ public class FinishLevel : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if(other.CompareTag("Player") && delay <= 0){
+			Debug.Log("Finished level");
 			GameManager.instance.CompleteLevel(LevelManager.instance.levelName);
 		}
 	}

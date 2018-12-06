@@ -47,6 +47,7 @@ public class SquadManager : MonoBehaviour {
 		if(swapTimer<=0){
 			if(player + 1 < squad.Count){
 				SelectMember(player+1);
+				player++;
 			}else{
 				SelectMember(0);
 				player = 0;
@@ -117,7 +118,10 @@ public class SquadManager : MonoBehaviour {
 		curChar.weapon.GetComponent<MouseLook>().enabled = false;
 		nextChar.weapon.GetComponent<MouseLook>().enabled = true;
 
+		var straight = nextChar.weapon.transform.localRotation;
+		
 		nextChar.weapon.transform.localRotation = curChar.weapon.transform.localRotation;
+		curChar.weapon.transform.localRotation = straight;
 
 		// Force an update of the UI
 		UIManager.instance.UpdatePlayerHealth(nextChar.health,250);

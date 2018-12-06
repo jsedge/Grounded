@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 		if(instance == null){
 			instance = this;
 			DontDestroyOnLoad(gameObject);
+			levelsComplete = new HashSet<string>();
 		}else{
 			Destroy(gameObject);
 			return;
@@ -32,17 +33,18 @@ public class GameManager : MonoBehaviour {
 			player.SetActive(!player.activeSelf);
 	}
 
-	public IEnumerable CompleteLevel(string levelName){
+	public void CompleteLevel(string levelName){
 		// Keep a distinct list of levels complete, cant get rewarded for finishing a level twice
 		levelsComplete.Add(levelName);
 		OpenLevel("CrashSite");
 
 		// If we completed enough levels we win
 		if(levelsComplete.Count >= 2){
-			UIManager.instance.UpdateInformation("You win!");
+			Debug.Log(UIManager.instance.gameObject);
+			UIManager.instance.gameObject.SetActive(false);	
 			Destroy(SquadManager.instance.gameObject);
-			yield return new WaitForSeconds(5.0f);
-			OpenLevel("Finale");
+				
+			OpenLevel("Finale");	
 		}
 	}
 
