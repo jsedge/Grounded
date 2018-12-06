@@ -824,7 +824,7 @@ Prefab:
     - target: {fileID: 114287271736889832, guid: ff94f44ac21fc480cabf2e0109be4422,
         type: 2}
       propertyPath: tracerTime
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff94f44ac21fc480cabf2e0109be4422, type: 2}
