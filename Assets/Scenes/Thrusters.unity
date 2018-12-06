@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44659358, g: 0.49642974, b: 0.5748251, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -660,6 +660,22 @@ Prefab:
       propertyPath: tracer
       value: 
       objectReference: {fileID: 817417682}
+    - target: {fileID: 4344871817222346, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344871817222346, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344871817222346, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344871817222346, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
   m_IsPrefabAsset: 0
@@ -855,18 +871,25 @@ Prefab:
         type: 2}
       propertyPath: tracer
       value: 
-      objectReference: {fileID: 1393383427}
+      objectReference: {fileID: 2068145569}
+    - target: {fileID: 4344871817222346, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344871817222346, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344871817222346, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1393383426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4525322126667180, guid: 67be9e21d16dd429a923d10050a608c7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1393383425}
---- !u!1 &1393383427 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1820381535564602, guid: 67be9e21d16dd429a923d10050a608c7,
     type: 2}
   m_PrefabInternal: {fileID: 1393383425}
 --- !u!1 &1653476830
@@ -1042,6 +1065,18 @@ Prefab:
       propertyPath: tracer
       value: 
       objectReference: {fileID: 2068145569}
+    - target: {fileID: 4344871817222346, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344871817222346, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344871817222346, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67be9e21d16dd429a923d10050a608c7, type: 2}
   m_IsPrefabAsset: 0
