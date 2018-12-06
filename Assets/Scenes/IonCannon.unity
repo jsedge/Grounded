@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731319, g: 0.38074932, b: 0.35872564, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -596,7 +596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: IonCannon
   isStartLevel: 0
-  gravity: 0
+  gravity: 1
   enemyTypes:
   - {fileID: 1471396253633166, guid: f62f0b914c6674b8caa0ea1f7e3f3afe, type: 2}
   - {fileID: 1183565865198416, guid: a35dd4c7ff9f94f949c774da4cf02417, type: 2}

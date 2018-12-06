@@ -106,8 +106,11 @@ public class SquadManager : MonoBehaviour {
 		current.GetComponent<RangedAI>().enabled = true;
 		next.GetComponent<RangedAI>().enabled = false;
 
-		// Grab a reference to the Character component so we don't need to look it up several times
-		PlayerCharacter curChar = current.GetComponent<PlayerCharacter>(),
+        // Rotate next character to be aligned upwards
+        next.GetComponent<Transform>().eulerAngles = new Vector3(0, next.GetComponent<Transform>().eulerAngles.y, 0);
+
+        // Grab a reference to the Character component so we don't need to look it up several times
+        PlayerCharacter curChar = current.GetComponent<PlayerCharacter>(),
 			nextChar = next.GetComponent<PlayerCharacter>();
 
 		// Toggle if they are a player

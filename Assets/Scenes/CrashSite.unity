@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44659358, g: 0.49642974, b: 0.5748251, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -508,6 +508,11 @@ Prefab:
     - target: {fileID: 4636815557271782, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23546319699495756, guid: c36dcc949579f9c4da1bc98bfec94d02,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
@@ -1096,6 +1101,11 @@ Prefab:
     - target: {fileID: 4636815557271782, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 23546319699495756, guid: c36dcc949579f9c4da1bc98bfec94d02,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
@@ -1693,6 +1703,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 23546319699495756, guid: c36dcc949579f9c4da1bc98bfec94d02,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
   m_IsPrefabAsset: 0
@@ -2047,7 +2062,7 @@ Prefab:
     - target: {fileID: 1156021886049268, guid: ff94f44ac21fc480cabf2e0109be4422, type: 2}
       propertyPath: m_Name
       value: SquadCharacter (2)
-      objectReference: {fileID: 0} 
+      objectReference: {fileID: 0}
     - target: {fileID: 1625673324774392, guid: ff94f44ac21fc480cabf2e0109be4422, type: 2}
       propertyPath: m_Name
       value: Rifle
@@ -2642,6 +2657,11 @@ Prefab:
     - target: {fileID: 4636815557271782, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23546319699495756, guid: c36dcc949579f9c4da1bc98bfec94d02,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c36dcc949579f9c4da1bc98bfec94d02, type: 2}
